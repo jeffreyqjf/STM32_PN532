@@ -8,6 +8,7 @@
 #include "Serial.h"
 #include "NFC_USART.h"
 #include "Buzzer.h"
+#include "Store.h"
 
 #include <string.h>
 #include <time.h>
@@ -17,11 +18,11 @@
 #define ACTIVATE_PAGE  ((uint16_t)3)
 #define READ_PAGE ((uint16_t)4)
 #define WRITE_PAGE  ((uint16_t)5)
-#define GAME_PAGE  ((uint16_t)6)
+#define DELETE_PAGE  ((uint16_t)6)
 
 #define READ_PAGE_CHOICE  ((uint16_t)0)
 #define WRITE_PAGE_CHOICE  ((uint16_t)1)
-#define GAME_PAGE_CHOICE  ((uint16_t)2)
+#define DELETE_PAGE_CHOICE  ((uint16_t)2)
 
 #define MENU_MAX_NUM ((uint16_t)3)
 
@@ -30,7 +31,7 @@ void menu_page(void);
 void activate_page(void);
 void read_page(void);
 void write_page(void);
-void game_page(void);
+void delete_page(void);
 void data_init(void);
 void reverse_menu(void);
 void Tran_Hex2Str(char* result_srting, uint8_t* Hex_array, uint16_t Len);
@@ -41,18 +42,19 @@ uint16_t status = HOME_PAGE; // in PCB it is MENU page?? another usb to TTL
 uint16_t menu_choice = READ_PAGE_CHOICE;
 // choice in menu page
 uint8_t read_cursor = 0;
-uint8_t read_reverse = 0, write_reverse = 0, game_reverse = 0;
+uint8_t read_reverse = 0, write_reverse = 0, delete_reverse = 0;
 // NFC status
 uint8_t NFC_waitting_reading = 1; // in order to send command once a time;
 
 
 // save data
-struct {
+typedef struct {
 	char name[10];
-	char card[10];
-}name_struct[50];
+	char card[20];
+}Name_Struct;
 
-uint16_t name_array_len = 7;
+Name_Struct name_struct[15];
+uint16_t name_array_len = 0;
 
 
 /*--------------------home page--------------------*/
@@ -121,7 +123,7 @@ void reverse_menu(void){
 		OLED_ClearArea(0, 19, 128, 32);
 		OLED_ShowString(0, 20, "READ", OLED_6X8);
 		OLED_ShowString(0, 30, "WRITE", OLED_6X8);
-		OLED_ShowString(0, 40, "GAME", OLED_6X8);
+		OLED_ShowString(0, 40, "DELETE", OLED_6X8);
 		OLED_ReverseArea(0, 19, 128, 10);
 	}
 	
@@ -129,15 +131,15 @@ void reverse_menu(void){
 		OLED_ClearArea(0, 19, 128, 32);
 		OLED_ShowString(0, 20, "READ", OLED_6X8);
 		OLED_ShowString(0, 30, "WRITE", OLED_6X8);
-		OLED_ShowString(0, 40, "GAME", OLED_6X8);
+		OLED_ShowString(0, 40, "DELETE", OLED_6X8);
 		OLED_ReverseArea(0, 29, 128, 10);
 	}
 	
-	if(game_reverse == 1){
+	if(delete_reverse == 1){
 		OLED_ClearArea(0, 19, 128, 32);
 		OLED_ShowString(0, 20, "READ", OLED_6X8);
 		OLED_ShowString(0, 30, "WRITE", OLED_6X8);
-		OLED_ShowString(0, 40, "GAME", OLED_6X8);
+		OLED_ShowString(0, 40, "DELETE", OLED_6X8);
 		OLED_ReverseArea(0, 39, 128, 10);
 	}
 }
@@ -149,7 +151,7 @@ void menu_page(void){
 			case READ_PAGE_CHOICE:
 				read_reverse = 1;
 				write_reverse = 0;
-				game_reverse = 0;
+				delete_reverse = 0;
 				//OLED_ShowString(60, 60, "**", OLED_6X8);
 				//OLED_ShowString(60, 60, "  ", OLED_6X8);
 				//OLED_ShowString(60, 60, "  ", OLED_6X8);
@@ -157,12 +159,12 @@ void menu_page(void){
 			case WRITE_PAGE_CHOICE:
 				read_reverse = 0;
 				write_reverse = 1;
-				game_reverse = 0;
+				delete_reverse = 0;
 				break;
-			case GAME_PAGE_CHOICE:
+			case DELETE_PAGE_CHOICE:
 				read_reverse = 0;
 				write_reverse = 0;
-				game_reverse = 1;
+				delete_reverse = 1;
 				break;
 			default:
 				break;
@@ -192,9 +194,9 @@ void menu_page(void){
 				status = WRITE_PAGE;
 				write_page();
 				break;
-			case GAME_PAGE_CHOICE:
-				status = GAME_PAGE;
-				game_page();
+			case DELETE_PAGE_CHOICE:
+				status = DELETE_PAGE;
+				delete_page();
 				break;
 			default:
 				break;
@@ -416,6 +418,7 @@ void write_page_read_card(void){
 					input_name_array[input_cursor - 1] = '\0';
 					strcpy(name_struct[name_array_len].name, input_name_array);
 					name_array_len += 1;
+					Store_Save_name_struct();
 					
 					// init again
 					input_cursor = 0;
@@ -464,19 +467,120 @@ void write_page(void){
 }
 
 
-/*--------------------game page--------------------*/
-void game_page(void){
-	OLED_ShowString(1, 1, "this is game_page", OLED_6X8);
+/*--------------------delete page--------------------*/
+uint8_t delete_cursor = 0; // use to select the choice, point at reverse(choose) data
+uint8_t rolling_cursor = 0; // use to show the data, point at first show data
+
+
+void delete_confirm_page(void){
+	OLED_Clear();
+	
+	// name: xxxx
+	// card: xxxx
+	// Are you sure to delete?
+	// back     confirm        
+	OLED_ShowString(0, 0, "name:", OLED_6X8);
+	OLED_ShowString(0, 10, "card:", OLED_6X8);
+	
+	OLED_ShowString(40, 0, name_struct[delete_cursor].name, OLED_6X8);
+	OLED_ShowString(40, 10, name_struct[delete_cursor].card, OLED_6X8);
+	
+	OLED_ShowString(0, 25, "sure to delete?", OLED_6X8);
+	
+	OLED_ShowString(0, 45, "back", OLED_8X16);
+	OLED_ReverseArea(0, 45, 32, 61);
+	OLED_ShowString(71, 45, "confirm", OLED_8X16);
+	OLED_ReverseArea(71, 45, 127, 61);
+	
+	OLED_Update();
+	
+	while(1){
+		if(Key_check(GPIOA, GPIO_Pin_2) == 1){
+			status = HOME_PAGE;
+			menu_choice = READ_PAGE_CHOICE;
+			OLED_Clear();
+			delete_cursor = 0;
+			rolling_cursor = 0;
+			break;
+		}
+	}
+}
+
+
+void delete_page(void){
+	/*
+	when rolling down the page , first go to buttom of screen, then go down
+	when rolling down the page , first go to top of screen, then go up
+	*/
+	
+	// if name_array_len = 7
+	// del_cur = 0  then  del_cur = 3  then del_cur = 4  then del_cur = 6 
+	// rol_cur = 0        rol_cur = 0   		rol_cur = 1	 ...	rol_cur = 3
+	// so the rol_cur in [del_cur, del_cur - 3] 
+	// so the del_cur in [rol_cur, rol_cur + 3]
+	if((Key_check(GPIOA, GPIO_Pin_5) == 1)){
+		
+		if(delete_cursor < name_array_len - 1){
+			delete_cursor += 1;
+			if(delete_cursor > rolling_cursor + 3)
+			{
+				rolling_cursor += 1;
+			}
+		}
+		
+		OLED_Clear();
+	}
+	
+	// del_cur = 6  then del_cur = 3  then del_cur = 0 
+	// rol_cur = 3   		 rol_cur = 3	...	 rol_cur = 0
+	if(Key_check(GPIOA, GPIO_Pin_4) == 1){
+
+		if(delete_cursor > 0){
+			delete_cursor -= 1;
+			if(delete_cursor < rolling_cursor)
+			{
+				rolling_cursor -= 1;
+			}
+		}
+		
+		OLED_Clear();
+	}
+	OLED_Clear();
+	
+	OLED_ShowString(0, 0, "name", OLED_8X16);
+	OLED_ShowString(60, 0, "card", OLED_8X16);
+	
+	OLED_ShowString(0, 20, name_struct[0 + rolling_cursor].name, OLED_6X8);
+	OLED_ShowString(60, 20, name_struct[0 + rolling_cursor].card, OLED_6X8);
+	OLED_ShowString(0, 30, name_struct[1 + rolling_cursor].name, OLED_6X8);
+	OLED_ShowString(60, 30, name_struct[1 + rolling_cursor].card, OLED_6X8);
+	OLED_ShowString(0, 40, name_struct[2 + rolling_cursor].name, OLED_6X8);
+	OLED_ShowString(60, 40, name_struct[2 + rolling_cursor].card, OLED_6X8);
+	OLED_ShowString(0, 50, name_struct[3 + rolling_cursor].name, OLED_6X8);
+	OLED_ShowString(60, 50, name_struct[3 + rolling_cursor].card, OLED_6X8);
+	
+	// the location is del_cur - rol_cur~[0,3]
+	OLED_ReverseArea(0, 20 - 1 + (delete_cursor - rolling_cursor) * 10, 127, 10);
+	
+	if(Key_check(GPIOA, GPIO_Pin_3)){
+		delete_confirm_page();
+	}
+	
 	if(Key_check(GPIOA, GPIO_Pin_2)){
 		status = HOME_PAGE;
 		menu_choice = READ_PAGE_CHOICE;
+		delete_cursor = 0;
+		rolling_cursor = 0;
 		OLED_Clear();
 	}
+	
 }
 
 
 /*--------------------system function--------------------*/
 void data_init(void){
+	Store_read_name_struct(); // get name_array_len and Data
+	/*
 	strcpy(name_struct[0].name, "jeffrey\0");
 	strcpy(name_struct[0].card, "0424D34F592F\0");
 	
@@ -497,6 +601,7 @@ void data_init(void){
 	
 	strcpy(name_struct[6].name, "jefrey\0");
 	strcpy(name_struct[6].card, "123\0");
+	*/
 }
 
 
@@ -532,12 +637,14 @@ void Tran_Hex2Str(char* result_srting, uint8_t* Hex_array, uint16_t Len)
 // add songer and LED program
 int main(void)
 {
+	Store_init();
 	data_init();
 	OLED_Init();
 	MyRTC_init();
 	Key_init();
 	NFC_USART_init();
 	Buzzer_init();
+	
 	
 	while(1){
 		switch(status){
@@ -556,8 +663,8 @@ int main(void)
 			case WRITE_PAGE:
 				write_page();
 				break;
-			case GAME_PAGE:
-				game_page();
+			case DELETE_PAGE:
+				delete_page();
 				break;
 			default:
 				break;

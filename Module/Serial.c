@@ -58,7 +58,7 @@ void Serial_SendByte(uint8_t Byte){
 }
 
 
-void Serial_SendArray(uint8_t *Array, uint16_t Length){
+void Serial_SendArray(const uint8_t *Array, uint16_t Length){
 	for(int i = 0; i < Length; i++){
 		Serial_SendByte(Array[i]); 
 	}
