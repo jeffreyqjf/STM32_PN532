@@ -1,0 +1,287 @@
+[2025-08-12 14:33:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-12 15:08:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-12 15:09:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-12 15:21:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-12 15:23:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-12 15:24:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-12 15:34:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-12 15:35:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-12 15:36:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-12 15:42:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-12 15:44:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-12 15:49:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-13 19:32:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-13 19:40:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-13 19:45:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-13 19:51:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-13 20:11:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-13 20:31:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-13 20:33:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-13 20:34:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-13 20:35:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-13 20:36:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-13 20:37:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-13 20:41:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-13 20:43:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-13 21:44:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-13 21:45:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-13 21:51:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-13 22:12:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-13 22:13:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-13 22:15:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-13 22:15:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-13 22:16:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-14 13:38:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-14 13:39:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-14 13:56:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-14 13:57:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-14 14:08:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-14 14:22:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-14 14:24:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-14 14:25:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-14 14:30:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-14 14:32:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-14 14:33:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-14 14:34:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-14 14:35:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-14 14:39:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-14 14:40:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-14 14:41:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-15 00:10:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 00:12:Program Success:49FF6C065067554825440987 C:\Users\31722\Desktop\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 00:13:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 14:33:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 14:33:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 14:34:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 14:36:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 14:50:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 14:52:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 14:52:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 14:54:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 15:03:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 18:32:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 18:33:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-15 18:44:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-16 00:11:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-16 00:13:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-16 00:16:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-16 00:18:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-16 00:18:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-16 01:06:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-16 01:08:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-16 01:09:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-16 01:10:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-16 01:12:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-16 01:16:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-17 14:11:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-17 14:12:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-17 14:13:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-17 14:13:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-17 14:14:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-18 12:36:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-18 12:36:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-18 12:39:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-18 12:40:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-18 12:56:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-18 12:57:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-18 12:58:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-18 12:59:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-18 13:01:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-18 13:02:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-18 13:08:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-18 13:09:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-18 13:21:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-18 13:22:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-18 13:24:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-18 13:25:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-18 13:31:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-18 13:43:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-18 13:45:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-18 13:46:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-18 16:42:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-18 16:45:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-18 16:48:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-28 12:15:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-28 12:16:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-28 12:18:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-28 12:19:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-28 12:19:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-28 12:20:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-28 12:21:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-28 12:21:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-28 12:22:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-28 12:22:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-08-28 12:53:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 13:05:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 13:07:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 13:07:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 20:10:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 20:11:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 20:17:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 20:18:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 21:26:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 21:29:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 21:30:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 21:37:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 21:49:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 21:50:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 21:52:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-28 21:54:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-28 21:55:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 13:23:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 13:23:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 13:24:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 13:25:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 13:25:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 13:26:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 13:26:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 13:27:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 13:44:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 14:08:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 14:08:Program Success:49FF6C065067554825440987 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 14:09:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 14:25:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 14:25:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 14:29:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 14:39:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 14:40:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 14:44:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 14:52:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 14:53:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 14:53:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 14:54:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 14:55:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 14:57:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:00:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:03:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:05:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:19:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:22:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:24:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:24:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:26:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:32:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:41:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:49:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:52:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:53:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:55:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 15:59:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 16:10:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 16:11:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 16:11:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 16:11:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 16:11:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 21:09:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 21:11:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 21:11:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 21:15:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 21:16:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 21:16:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 21:17:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 21:17:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 21:18:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 21:19:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 21:26:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-29 21:28:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 21:31:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-29 21:34:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 10:32:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-30 10:34:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-30 10:38:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-30 10:40:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-30 10:49:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-30 10:50:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-30 10:51:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-30 10:52:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-30 11:03:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-30 11:03:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-30 11:06:Program Success:49FF6C065067554825440987 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-08-30 11:06:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 11:07:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 12:29:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 12:33:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 12:54:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 12:57:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 12:58:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:00:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:00:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:03:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:14:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:16:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:17:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:18:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:20:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:23:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:24:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:25:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:26:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:36:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:38:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:39:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:41:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:56:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 13:58:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 14:40:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 14:41:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 14:45:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 14:45:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 14:47:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 14:48:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 14:49:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 14:52:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 14:55:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 14:57:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 14:58:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 15:02:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 15:07:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 15:14:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 15:15:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:31:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:34:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:36:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:38:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:38:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:39:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:41:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:42:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:43:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:44:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:45:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:45:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:46:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:48:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:50:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:52:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:54:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:55:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:57:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-30 18:58:日志记录不属免费功能,请注册支持作者改进软件
+[2025-08-31 18:48:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-09-01 13:11:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\MyFirstProject\Output\Project.hex
+[2025-09-01 13:59:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-09-01 14:34:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-09-01 14:57:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-09-01 14:58:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-09-01 15:01:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-09-01 15:02:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-09-01 15:06:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-09-01 15:08:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC\Output\Project.hex
+[2025-09-01 15:18:Program Success:48FF6B067265515025530887 C:\Users\jeffr\Desktop\10-1 软件I2C读写MPU6050\Objects\Project.hex
+[2025-09-01 15:22:Program Success:48FF6B067265515025530887 C:\Users\jeffr\Desktop\10-1 软件I2C读写MPU6050\Objects\Project.hex
+[2025-09-01 15:23:Program Success:48FF6B067265515025530887 C:\Users\jeffr\Desktop\10-1 软件I2C读写MPU6050\Objects\Project.hex
+[2025-09-01 15:27:Program Success:48FF6B067265515025530887 C:\Users\jeffr\Desktop\10-1 软件I2C读写MPU6050\Objects\Project.hex
+[2025-09-01 15:28:Program Success:48FF6B067265515025530887 C:\Users\jeffr\Desktop\10-1 软件I2C读写MPU6050\Objects\Project.hex
+[2025-09-01 15:29:Program Success:48FF6B067265515025530887 C:\Users\jeffr\Desktop\10-1 软件I2C读写MPU6050\Objects\Project.hex
+[2025-09-01 15:30:Program Success:48FF6B067265515025530887 C:\Users\jeffr\Desktop\10-1 软件I2C读写MPU6050\Objects\Project.hex
+[2025-09-01 15:34:Program Success:48FF6B067265515025530887 C:\Users\jeffr\Desktop\10-1 软件I2C读写MPU6050\Objects\Project.hex
+[2025-09-01 15:35:Program Success:48FF6B067265515025530887 C:\Users\jeffr\Desktop\10-1 软件I2C读写MPU6050\Objects\Project.hex
+[2025-09-01 15:35:Program Success:48FF6B067265515025530887 C:\Users\jeffr\Desktop\10-1 软件I2C读写MPU6050\Objects\Project.hex
+[2025-09-01 16:22:Program Success:48FF6B067265515025530887 C:\Users\jeffr\Desktop\10-1 软件I2C读写MPU6050\Objects\Project.hex
+[2025-09-01 16:39:日志记录不属免费功能,请注册支持作者改进软件
+[2025-09-01 16:41:日志记录不属免费功能,请注册支持作者改进软件
+[2025-09-05 15:53:Program Success:49FF6C065067554825440987 C:\Users\jeffr\Desktop\NFC-面包板实验\Output\Project.hex
+[2025-09-05 16:40:Program Success:48FF6B067265515025530887 C:\Users\jeffr\Desktop\NFC-USART1\Output\Project.hex
+[2025-09-07 13:17:Program Success:48FF6B067265515025530887 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC-USART1-main\Output\Project.hex
+[2025-09-07 13:34:Program Success:48FF6B067265515025530887 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC-USART1-main\Output\Project.hex
+[2025-09-07 13:46:Program Success:48FF6B067265515025530887 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC-USART1-main\Output\Project.hex
