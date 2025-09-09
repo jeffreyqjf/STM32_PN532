@@ -11,6 +11,9 @@
 
 uint16_t Store_Data[STORE_COUNT];
 
+extern Name_Struct name_struct[15];
+extern uint16_t name_array_len;
+
 
 void Store_init(void){
 	

@@ -9,6 +9,9 @@
 #include "NFC_USART.h"
 #include "Buzzer.h"
 #include "Store.h"
+#include "LED.h"
+
+#include "main.h"
 
 #include <string.h>
 #include <time.h>
@@ -25,6 +28,9 @@
 #define DELETE_PAGE_CHOICE  ((uint16_t)2)
 
 #define MENU_MAX_NUM ((uint16_t)3)
+
+// #define NAME_LEN  12 // in main.h, for other *.c
+// #define CARD_LEN  20
 
 void home_page(void);
 void menu_page(void);
@@ -48,11 +54,6 @@ uint8_t NFC_waitting_reading = 1; // in order to send command once a time;
 
 
 // save data
-typedef struct {
-	char name[10];
-	char card[20];
-}Name_Struct;
-
 Name_Struct name_struct[15];
 uint16_t name_array_len = 0;
 
@@ -87,14 +88,17 @@ void home_page(void){
 		{	
 			OLED_Clear();
 			OLED_ShowString(00, 30, "NFC wrong!", OLED_8X16);
+			LED_R_ON_G_OFF();
 		}else{
+			
+			LED_R_OFF_G_ON(); // the NFC is on
 			
 			if(NFC_waitting_reading)
 				{
 					NFC_ReadIDCard();
 					NFC_waitting_reading = 0;
 				}
-	
+
 			if(RxLen >= 7) // this is a lower decision
 				{
 				// turn to activate
@@ -171,6 +175,8 @@ void menu_page(void){
 		}
 	reverse_menu();
 	
+	LED_R_ON_G_OFF(); // NFC is not on
+		
 	//down
 	if(Key_check(GPIOA, GPIO_Pin_5) == 1){
 		menu_choice += 1;
@@ -222,9 +228,12 @@ void activate_page(void){
 	if(NFC_Status == 0)
 		{
 			OLED_ShowString(00, 30, "NFC wrong!", OLED_8X16);
+			LED_R_ON_G_OFF();
 		}
 	else
 		{
+			LED_ALL_ON();
+			
 			// GET UID and show
 			NFC_GET_UID();
 			
@@ -233,7 +242,7 @@ void activate_page(void){
 			Tran_Hex2Str(result_string, Card_UID, 6);
 			
 			// finding in database, but have bug now... can not find the user I write here
-			char user_name[10] = {0};
+			char user_name[NAME_LEN] = {0};
 			strcpy(user_name, "Stranger\0");
 			uint8_t find_flag = 0; //not used now
 			for(int i = 0; i < name_array_len; i++){
@@ -305,6 +314,8 @@ void read_page(void){
 	OLED_ClearArea(122, Y_top, 3, 10); // avoid overflower show
 	OLED_DrawRectangle(124, Y_top, 3, 10, OLED_FILLED);
 	
+	LED_R_ON_G_OFF();
+	
 	if(Key_check(GPIOA, GPIO_Pin_2)){
 		status = HOME_PAGE;
 		menu_choice = READ_PAGE_CHOICE;
@@ -318,14 +329,17 @@ int8_t input_cursor = 0;
 uint8_t read_NFC = 0; // have read card or not
 
 char input_char = 'a';
-char input_name_array[10];
+char input_name_array[NAME_LEN];
 
 
 void write_page_nread_card(void){
 		OLED_Clear();
 		if(NFC_Status == 0){
 			OLED_ShowString(00, 30, "NFC wrong!", OLED_8X16);
+			
+			LED_R_ON_G_OFF();
 		}else{
+			LED_R_OFF_G_ON();
 			
 			if(NFC_waitting_reading)
 				{
@@ -449,8 +463,12 @@ void write_page(void){
 	
 	// waiting the NFC information
 	if(!read_NFC){
+		LED_R_OFF_G_ON();
+		
 		write_page_nread_card();
 	}else{
+		LED_ALL_ON();
+		
 		write_page_read_card();
 	}
 
@@ -470,6 +488,21 @@ void write_page(void){
 /*--------------------delete page--------------------*/
 uint8_t delete_cursor = 0; // use to select the choice, point at reverse(choose) data
 uint8_t rolling_cursor = 0; // use to show the data, point at first show data
+
+
+void delete_data(uint8_t delete_cursor){
+	/*delete name_sturct[delete_cursor] and move behind data*/
+	
+	for(int i = delete_cursor; i < name_array_len - 1; i ++){
+		strcpy(name_struct[i].name, name_struct[i + 1].name); // delete the data
+		strcpy(name_struct[i].card, name_struct[i + 1].card);
+	}
+	strcpy(name_struct[name_array_len - 1].name, ""); // can fix the finall data
+	strcpy(name_struct[name_array_len - 1].card, "");
+	name_array_len -= 1;
+	
+	Store_Save_name_struct();
+}
 
 
 void delete_confirm_page(void){
@@ -503,6 +536,15 @@ void delete_confirm_page(void){
 			rolling_cursor = 0;
 			break;
 		}
+		//confirm, back to delete_page and delete the data
+		if(Key_check(GPIOA, GPIO_Pin_3) == 1){
+			delete_data(delete_cursor);
+			OLED_Clear();
+			delete_cursor = 0;
+			rolling_cursor = 0;
+			Buzzer_on_500ms();
+			break;
+		}
 	}
 }
 
@@ -518,6 +560,9 @@ void delete_page(void){
 	// rol_cur = 0        rol_cur = 0   		rol_cur = 1	 ...	rol_cur = 3
 	// so the rol_cur in [del_cur, del_cur - 3] 
 	// so the del_cur in [rol_cur, rol_cur + 3]
+	
+	LED_R_ON_G_OFF();
+	
 	if((Key_check(GPIOA, GPIO_Pin_5) == 1)){
 		
 		if(delete_cursor < name_array_len - 1){
@@ -644,7 +689,7 @@ int main(void)
 	Key_init();
 	NFC_USART_init();
 	Buzzer_init();
-	
+	LED_init();
 	
 	while(1){
 		switch(status){

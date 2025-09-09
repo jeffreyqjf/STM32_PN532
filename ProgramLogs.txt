@@ -289,3 +289,7 @@
 [2025-09-08 02:51:Program Success:48FF6B067265515025530887 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC-USART1-main\Output\Project.hex
 [2025-09-08 03:21:Program Success:48FF6B067265515025530887 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC-USART1-main\Output\Project.hex
 [2025-09-08 03:45:Program Success:48FF6B067265515025530887 C:\Users\31722\OneDrive\STM32ProjectFiles\NFC-USART1-main\Output\Project.hex
+[2025-09-08 13:20:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC-USART1-main\Output\Project.hex
+[2025-09-08 13:26:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC-USART1-main\Output\Project.hex
+[2025-09-08 16:00:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC-USART1-main\Output\Project.hex
+[2025-09-08 16:46:Program Success:48FF6B067265515025530887 C:\Users\jeffr\OneDrive\STM32ProjectFiles\NFC-USART1-main\Output\Project.hex

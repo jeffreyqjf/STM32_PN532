@@ -795,6 +795,16 @@
               <FileType>5</FileType>
               <FilePath>.\Module\MyFlash.h</FilePath>
             </File>
+            <File>
+              <FileName>LED.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Module\LED.c</FilePath>
+            </File>
+            <File>
+              <FileName>LED.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Module\LED.h</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>
