@@ -670,11 +670,6 @@
               <FileType>5</FileType>
               <FilePath>.\User\stm32f10x_it.h</FilePath>
             </File>
-            <File>
-              <FileName>main.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\User\main.h</FilePath>
-            </File>
           </Files>
         </Group>
         <Group>
@@ -716,6 +711,46 @@
               <FilePath>.\Module\OLED.h</FilePath>
             </File>
             <File>
+              <FileName>Interrupt_init.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Module\Interrupt_init.c</FilePath>
+            </File>
+            <File>
+              <FileName>Interrupt_init.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Module\Interrupt_init.h</FilePath>
+            </File>
+            <File>
+              <FileName>Timer.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Module\Timer.c</FilePath>
+            </File>
+            <File>
+              <FileName>Timer.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Module\Timer.h</FilePath>
+            </File>
+            <File>
+              <FileName>PWM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Module\PWM.c</FilePath>
+            </File>
+            <File>
+              <FileName>PWM.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Module\PWM.h</FilePath>
+            </File>
+            <File>
+              <FileName>AD.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Module\AD.c</FilePath>
+            </File>
+            <File>
+              <FileName>AD.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Module\AD.h</FilePath>
+            </File>
+            <File>
               <FileName>MyRTC.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Module\MyRTC.c</FilePath>
@@ -746,6 +781,16 @@
               <FilePath>.\Module\OLED_Data.h</FilePath>
             </File>
             <File>
+              <FileName>I2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Module\I2C.c</FilePath>
+            </File>
+            <File>
+              <FileName>I2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Module\I2C.h</FilePath>
+            </File>
+            <File>
               <FileName>Serial.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Module\Serial.c</FilePath>
@@ -756,54 +801,24 @@
               <FilePath>.\Module\Serial.h</FilePath>
             </File>
             <File>
+              <FileName>NFC_I2C.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Module\NFC_I2C.c</FilePath>
+            </File>
+            <File>
               <FileName>NFC_USART.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Module\NFC_USART.c</FilePath>
             </File>
             <File>
+              <FileName>NFC_I2C.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Module\NFC_I2C.h</FilePath>
+            </File>
+            <File>
               <FileName>NFC_USART.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\Module\NFC_USART.h</FilePath>
-            </File>
-            <File>
-              <FileName>Buzzer.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Module\Buzzer.c</FilePath>
-            </File>
-            <File>
-              <FileName>Buzzer.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Module\Buzzer.h</FilePath>
-            </File>
-            <File>
-              <FileName>Store.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Module\Store.c</FilePath>
-            </File>
-            <File>
-              <FileName>Store.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Module\Store.h</FilePath>
-            </File>
-            <File>
-              <FileName>MyFlash.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Module\MyFlash.c</FilePath>
-            </File>
-            <File>
-              <FileName>MyFlash.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Module\MyFlash.h</FilePath>
-            </File>
-            <File>
-              <FileName>LED.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Module\LED.c</FilePath>
-            </File>
-            <File>
-              <FileName>LED.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Module\LED.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -14,7 +14,6 @@ uint8_t Key_check(GPIO_TypeDef* GPIOx, uint16_t GPIO_Pin){
 	return tag;
 }
 
-
 void Key_init(void){
 	GPIOA_init(GPIO_Mode_IPU, GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5);
 }

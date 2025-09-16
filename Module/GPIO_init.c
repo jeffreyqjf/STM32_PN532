@@ -40,7 +40,12 @@ void Indicator_light_init(void){
 	GPIO_InitStructure.GPIO_Speed =  GPIO_Speed_50MHz;
 	GPIO_Init(GPIOC, &GPIO_InitStructure);
 }
+/*
+void NFC_GPIO_init(void){
+	GPIOA_init(GPIO_Mode_IPU, GPIO_Pin_2 | GPIO_Pin_3 | GPIO_Pin_4 | GPIO_Pin_5);
 
+}
+*/
 /*
 uint8_t Button_all_close(void){
 	// if tag is 1, the button close all

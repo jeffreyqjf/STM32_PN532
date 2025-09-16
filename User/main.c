@@ -7,11 +7,6 @@
 #include "Key.h"
 #include "Serial.h"
 #include "NFC_USART.h"
-#include "Buzzer.h"
-#include "Store.h"
-#include "LED.h"
-
-#include "main.h"
 
 #include <string.h>
 #include <time.h>
@@ -21,23 +16,20 @@
 #define ACTIVATE_PAGE  ((uint16_t)3)
 #define READ_PAGE ((uint16_t)4)
 #define WRITE_PAGE  ((uint16_t)5)
-#define DELETE_PAGE  ((uint16_t)6)
+#define GAME_PAGE  ((uint16_t)6)
 
 #define READ_PAGE_CHOICE  ((uint16_t)0)
 #define WRITE_PAGE_CHOICE  ((uint16_t)1)
-#define DELETE_PAGE_CHOICE  ((uint16_t)2)
+#define GAME_PAGE_CHOICE  ((uint16_t)2)
 
 #define MENU_MAX_NUM ((uint16_t)3)
-
-// #define NAME_LEN  12 // in main.h, for other *.c
-// #define CARD_LEN  20
 
 void home_page(void);
 void menu_page(void);
 void activate_page(void);
 void read_page(void);
 void write_page(void);
-void delete_page(void);
+void game_page(void);
 void data_init(void);
 void reverse_menu(void);
 void Tran_Hex2Str(char* result_srting, uint8_t* Hex_array, uint16_t Len);
@@ -48,14 +40,18 @@ uint16_t status = HOME_PAGE; // in PCB it is MENU page?? another usb to TTL
 uint16_t menu_choice = READ_PAGE_CHOICE;
 // choice in menu page
 uint8_t read_cursor = 0;
-uint8_t read_reverse = 0, write_reverse = 0, delete_reverse = 0;
+uint8_t read_reverse = 0, write_reverse = 0, game_reverse = 0;
 // NFC status
 uint8_t NFC_waitting_reading = 1; // in order to send command once a time;
 
 
 // save data
-Name_Struct name_struct[15];
-uint16_t name_array_len = 0;
+struct {
+	char name[10];
+	char card[10];
+}name_struct[50];
+
+uint16_t name_array_len = 7;
 
 
 /*--------------------home page--------------------*/
@@ -88,17 +84,14 @@ void home_page(void){
 		{	
 			OLED_Clear();
 			OLED_ShowString(00, 30, "NFC wrong!", OLED_8X16);
-			LED_R_ON_G_OFF();
 		}else{
-			
-			LED_R_OFF_G_ON(); // the NFC is on
 			
 			if(NFC_waitting_reading)
 				{
 					NFC_ReadIDCard();
 					NFC_waitting_reading = 0;
 				}
-
+	
 			if(RxLen >= 7) // this is a lower decision
 				{
 				// turn to activate
@@ -127,7 +120,7 @@ void reverse_menu(void){
 		OLED_ClearArea(0, 19, 128, 32);
 		OLED_ShowString(0, 20, "READ", OLED_6X8);
 		OLED_ShowString(0, 30, "WRITE", OLED_6X8);
-		OLED_ShowString(0, 40, "DELETE", OLED_6X8);
+		OLED_ShowString(0, 40, "GAME", OLED_6X8);
 		OLED_ReverseArea(0, 19, 128, 10);
 	}
 	
@@ -135,15 +128,15 @@ void reverse_menu(void){
 		OLED_ClearArea(0, 19, 128, 32);
 		OLED_ShowString(0, 20, "READ", OLED_6X8);
 		OLED_ShowString(0, 30, "WRITE", OLED_6X8);
-		OLED_ShowString(0, 40, "DELETE", OLED_6X8);
+		OLED_ShowString(0, 40, "GAME", OLED_6X8);
 		OLED_ReverseArea(0, 29, 128, 10);
 	}
 	
-	if(delete_reverse == 1){
+	if(game_reverse == 1){
 		OLED_ClearArea(0, 19, 128, 32);
 		OLED_ShowString(0, 20, "READ", OLED_6X8);
 		OLED_ShowString(0, 30, "WRITE", OLED_6X8);
-		OLED_ShowString(0, 40, "DELETE", OLED_6X8);
+		OLED_ShowString(0, 40, "GAME", OLED_6X8);
 		OLED_ReverseArea(0, 39, 128, 10);
 	}
 }
@@ -155,7 +148,7 @@ void menu_page(void){
 			case READ_PAGE_CHOICE:
 				read_reverse = 1;
 				write_reverse = 0;
-				delete_reverse = 0;
+				game_reverse = 0;
 				//OLED_ShowString(60, 60, "**", OLED_6X8);
 				//OLED_ShowString(60, 60, "  ", OLED_6X8);
 				//OLED_ShowString(60, 60, "  ", OLED_6X8);
@@ -163,20 +156,18 @@ void menu_page(void){
 			case WRITE_PAGE_CHOICE:
 				read_reverse = 0;
 				write_reverse = 1;
-				delete_reverse = 0;
+				game_reverse = 0;
 				break;
-			case DELETE_PAGE_CHOICE:
+			case GAME_PAGE_CHOICE:
 				read_reverse = 0;
 				write_reverse = 0;
-				delete_reverse = 1;
+				game_reverse = 1;
 				break;
 			default:
 				break;
 		}
 	reverse_menu();
 	
-	LED_R_ON_G_OFF(); // NFC is not on
-		
 	//down
 	if(Key_check(GPIOA, GPIO_Pin_5) == 1){
 		menu_choice += 1;
@@ -200,9 +191,9 @@ void menu_page(void){
 				status = WRITE_PAGE;
 				write_page();
 				break;
-			case DELETE_PAGE_CHOICE:
-				status = DELETE_PAGE;
-				delete_page();
+			case GAME_PAGE_CHOICE:
+				status = GAME_PAGE;
+				game_page();
 				break;
 			default:
 				break;
@@ -221,44 +212,18 @@ void menu_page(void){
 
 
 /*--------------------activate page--------------------*/
-uint8_t First_time_in_act_page = 1;
-
 void activate_page(void){
 	// could add some other function: delay 5s and back...
+	// select database and show name
 	if(NFC_Status == 0)
 		{
 			OLED_ShowString(00, 30, "NFC wrong!", OLED_8X16);
-			LED_R_ON_G_OFF();
 		}
 	else
 		{
-			LED_ALL_ON();
-			
 			// GET UID and show
 			NFC_GET_UID();
-			
-			// Tran_Hex2Str
-			char result_string[16];
-			Tran_Hex2Str(result_string, Card_UID, 6);
-			
-			// finding in database, but have bug now... can not find the user I write here
-			char user_name[NAME_LEN] = {0};
-			strcpy(user_name, "Stranger\0");
-			uint8_t find_flag = 0; //not used now
-			for(int i = 0; i < name_array_len; i++){
-				if(strcmp(name_struct[i].card, result_string) == 0)// find the final same card user 
-				{
-					strcpy(user_name, "\0");
-					strcpy(user_name, name_struct[i].name);
-					find_flag = 1;
-				}	
-			}
-			OLED_Printf(0, 15, OLED_8X16, "Hello!%s", user_name);
-			OLED_Printf(0, 45, OLED_8X16, "ID:%02X%02X%02X%02X%02X%02X", Card_UID[0], Card_UID[1], Card_UID[2], Card_UID[3], Card_UID[4], Card_UID[5]);
-			if(First_time_in_act_page == 1){
-				Buzzer_on_500ms();
-				First_time_in_act_page = 0;
-			}
+			OLED_Printf(0, 30, OLED_8X16, "ID:%02X%02X%02X%02X%02X%02X%02X", Card_UID[0], Card_UID[1], Card_UID[2], Card_UID[3], Card_UID[4], Card_UID[5], Card_UID[6]);
 		}
 	if(Key_check(GPIOA, GPIO_Pin_2)){
 		status = HOME_PAGE;
@@ -266,7 +231,6 @@ void activate_page(void){
 		OLED_Clear();
 		NFC_waitting_reading = 1;
 		NFC_Clear_status();
-		First_time_in_act_page = 1;
 	}
 }
 
@@ -314,8 +278,6 @@ void read_page(void){
 	OLED_ClearArea(122, Y_top, 3, 10); // avoid overflower show
 	OLED_DrawRectangle(124, Y_top, 3, 10, OLED_FILLED);
 	
-	LED_R_ON_G_OFF();
-	
 	if(Key_check(GPIOA, GPIO_Pin_2)){
 		status = HOME_PAGE;
 		menu_choice = READ_PAGE_CHOICE;
@@ -329,17 +291,14 @@ int8_t input_cursor = 0;
 uint8_t read_NFC = 0; // have read card or not
 
 char input_char = 'a';
-char input_name_array[NAME_LEN];
+char input_name_array[10];
 
 
 void write_page_nread_card(void){
 		OLED_Clear();
 		if(NFC_Status == 0){
 			OLED_ShowString(00, 30, "NFC wrong!", OLED_8X16);
-			
-			LED_R_ON_G_OFF();
 		}else{
-			LED_R_OFF_G_ON();
 			
 			if(NFC_waitting_reading)
 				{
@@ -375,36 +334,32 @@ void write_page_nread_card(void){
 }
 
 
-uint8_t First_time_in_write_page = 1;
-
 void write_page_read_card(void){
 		// if have information, read_NFC = 1
 		OLED_Clear();
 		// GET UID
 		NFC_GET_UID();
+		// Tran_Hex2Str
+		char result_string[16];
+		Tran_Hex2Str(result_string, Card_UID, 7);
+		// record ID
+		strcpy(name_struct[name_array_len].card, result_string); 
 		
 		// record name
 		uint8_t exit_flag = 0;
 		// HEAD
-		OLED_Printf(0, 0, OLED_6X8, "ID:%02X%02X%02X%02X%02X%02X", Card_UID[0], Card_UID[1], Card_UID[2], Card_UID[3], Card_UID[4], Card_UID[5]);
+		OLED_Printf(0, 0, OLED_6X8, "ID:%02X%02X%02X%02X%02X%02X%02X", Card_UID[0], Card_UID[1], Card_UID[2], Card_UID[3], Card_UID[4], Card_UID[5], Card_UID[6]);
 		OLED_ShowString(0, 10, "please input name:", OLED_6X8);
-		if(First_time_in_write_page == 1){
-			Buzzer_on_500ms();
-			First_time_in_write_page = 0;
-		}
-	
+		
 		OLED_Update();
 		while (!exit_flag){
 
 			// do not want to record and exit
 			if((Key_check(GPIOA, GPIO_Pin_2) == 1)){
-				status = HOME_PAGE;
-				menu_choice = READ_PAGE_CHOICE;
 				OLED_Clear();
 				exit_flag = 1;
 				read_NFC = 0;
 				NFC_Clear_status();
-				First_time_in_write_page = 1;
 				break;
 			}
 				
@@ -424,16 +379,9 @@ void write_page_read_card(void){
 				
 				// finish
 				if(input_char == 'a' - 1){
-					// Tran_Hex2Str
-					char result_string[16];
-					Tran_Hex2Str(result_string, Card_UID, 6);
-					// record ID
-					strcpy(name_struct[name_array_len].card, result_string); 
-					
 					input_name_array[input_cursor - 1] = '\0';
 					strcpy(name_struct[name_array_len].name, input_name_array);
 					name_array_len += 1;
-					Store_Save_name_struct();
 					
 					// init again
 					input_cursor = 0;
@@ -445,8 +393,6 @@ void write_page_read_card(void){
 					exit_flag = 1;
 					read_NFC = 0;
 					NFC_Clear_status();
-					OLED_Clear();
-					First_time_in_write_page = 1;
 					break; 
 				}	
 				input_char = 'a';
@@ -460,16 +406,10 @@ void write_page_read_card(void){
 
 void write_page(void){
 	/* write the information into name_array */
-	// write function can't avoid the same card now, can achieve it in Flash.c or Database.c
-	
 	// waiting the NFC information
 	if(!read_NFC){
-		LED_R_OFF_G_ON();
-		
 		write_page_nread_card();
 	}else{
-		LED_ALL_ON();
-		
 		write_page_read_card();
 	}
 
@@ -486,151 +426,23 @@ void write_page(void){
 }
 
 
-/*--------------------delete page--------------------*/
-uint8_t delete_cursor = 0; // use to select the choice, point at reverse(choose) data
-uint8_t rolling_cursor = 0; // use to show the data, point at first show data
-
-
-void delete_data(uint8_t delete_cursor){
-	/*delete name_sturct[delete_cursor] and move behind data*/
-	
-	for(int i = delete_cursor; i < name_array_len - 1; i ++){
-		strcpy(name_struct[i].name, name_struct[i + 1].name); // delete the data
-		strcpy(name_struct[i].card, name_struct[i + 1].card);
-	}
-	strcpy(name_struct[name_array_len - 1].name, ""); // can fix the finall data
-	strcpy(name_struct[name_array_len - 1].card, "");
-	name_array_len -= 1;
-	
-	Store_Save_name_struct();
-}
-
-
-void delete_confirm_page(void){
-	OLED_Clear();
-	
-	// name: xxxx
-	// card: xxxx
-	// Are you sure to delete?
-	// back     confirm        
-	OLED_ShowString(0, 0, "name:", OLED_6X8);
-	OLED_ShowString(0, 10, "card:", OLED_6X8);
-	
-	OLED_ShowString(40, 0, name_struct[delete_cursor].name, OLED_6X8);
-	OLED_ShowString(40, 10, name_struct[delete_cursor].card, OLED_6X8);
-	
-	OLED_ShowString(0, 25, "sure to delete?", OLED_6X8);
-	
-	OLED_ShowString(0, 45, "back", OLED_8X16);
-	OLED_ReverseArea(0, 45, 32, 61);
-	OLED_ShowString(71, 45, "confirm", OLED_8X16);
-	OLED_ReverseArea(71, 45, 127, 61);
-	
-	OLED_Update();
-	
-	while(1){
-		if(Key_check(GPIOA, GPIO_Pin_2) == 1){
-			status = HOME_PAGE;
-			menu_choice = READ_PAGE_CHOICE;
-			OLED_Clear();
-			delete_cursor = 0;
-			rolling_cursor = 0;
-			break;
-		}
-		//confirm, back to delete_page and delete the data
-		if(Key_check(GPIOA, GPIO_Pin_3) == 1){
-			delete_data(delete_cursor);
-			OLED_Clear();
-			delete_cursor = 0;
-			rolling_cursor = 0;
-			Buzzer_on_500ms();
-			break;
-		}
-	}
-}
-
-
-void delete_page(void){
-	/*
-	when rolling down the page , first go to buttom of screen, then go down
-	when rolling down the page , first go to top of screen, then go up
-	*/
-	
-	// if name_array_len = 7
-	// del_cur = 0  then  del_cur = 3  then del_cur = 4  then del_cur = 6 
-	// rol_cur = 0        rol_cur = 0   		rol_cur = 1	 ...	rol_cur = 3
-	// so the rol_cur in [del_cur, del_cur - 3] 
-	// so the del_cur in [rol_cur, rol_cur + 3]
-	
-	LED_R_ON_G_OFF();
-	
-	if((Key_check(GPIOA, GPIO_Pin_5) == 1)){
-		
-		if(delete_cursor < name_array_len - 1){
-			delete_cursor += 1;
-			if(delete_cursor > rolling_cursor + 3)
-			{
-				rolling_cursor += 1;
-			}
-		}
-		
-		OLED_Clear();
-	}
-	
-	// del_cur = 6  then del_cur = 3  then del_cur = 0 
-	// rol_cur = 3   		 rol_cur = 3	...	 rol_cur = 0
-	if(Key_check(GPIOA, GPIO_Pin_4) == 1){
-
-		if(delete_cursor > 0){
-			delete_cursor -= 1;
-			if(delete_cursor < rolling_cursor)
-			{
-				rolling_cursor -= 1;
-			}
-		}
-		
-		OLED_Clear();
-	}
-	OLED_Clear();
-	
-	OLED_ShowString(0, 0, "name", OLED_8X16);
-	OLED_ShowString(60, 0, "card", OLED_8X16);
-	
-	OLED_ShowString(0, 20, name_struct[0 + rolling_cursor].name, OLED_6X8);
-	OLED_ShowString(60, 20, name_struct[0 + rolling_cursor].card, OLED_6X8);
-	OLED_ShowString(0, 30, name_struct[1 + rolling_cursor].name, OLED_6X8);
-	OLED_ShowString(60, 30, name_struct[1 + rolling_cursor].card, OLED_6X8);
-	OLED_ShowString(0, 40, name_struct[2 + rolling_cursor].name, OLED_6X8);
-	OLED_ShowString(60, 40, name_struct[2 + rolling_cursor].card, OLED_6X8);
-	OLED_ShowString(0, 50, name_struct[3 + rolling_cursor].name, OLED_6X8);
-	OLED_ShowString(60, 50, name_struct[3 + rolling_cursor].card, OLED_6X8);
-	
-	// the location is del_cur - rol_cur~[0,3]
-	OLED_ReverseArea(0, 20 - 1 + (delete_cursor - rolling_cursor) * 10, 127, 10);
-	
-	if(Key_check(GPIOA, GPIO_Pin_3)){
-		delete_confirm_page();
-	}
-	
+/*--------------------game page--------------------*/
+void game_page(void){
+	OLED_ShowString(1, 1, "this is game_page", OLED_6X8);
 	if(Key_check(GPIOA, GPIO_Pin_2)){
 		status = HOME_PAGE;
 		menu_choice = READ_PAGE_CHOICE;
-		delete_cursor = 0;
-		rolling_cursor = 0;
 		OLED_Clear();
 	}
-	
 }
 
 
 /*--------------------system function--------------------*/
 void data_init(void){
-	Store_read_name_struct(); // get name_array_len and Data
-	/*
 	strcpy(name_struct[0].name, "jeffrey\0");
-	strcpy(name_struct[0].card, "0424D34F592F\0");
+	strcpy(name_struct[0].card, "123\0");
 	
-	strcpy(name_struct[1].name, "MuSeet\0");
+	strcpy(name_struct[1].name, "j\0");
 	strcpy(name_struct[1].card, "1\0");
 	
 	strcpy(name_struct[2].name, "e\0");
@@ -647,11 +459,9 @@ void data_init(void){
 	
 	strcpy(name_struct[6].name, "jefrey\0");
 	strcpy(name_struct[6].card, "123\0");
-	*/
 }
 
 
-// maybe this function is wrong, but will not effect thr result, and could be a secret
 void Tran_Hex2Str(char* result_srting, uint8_t* Hex_array, uint16_t Len)
 {
 	uint8_t one_num = 0;
@@ -676,20 +486,16 @@ void Tran_Hex2Str(char* result_srting, uint8_t* Hex_array, uint16_t Len)
 			result_srting[2* i + 1] = one_num + 'A' - 10;
 		}
 	}
-	result_srting[2 * Len] = '\0';
 }
 
 
 int main(void)
 {
-	Store_init();
 	data_init();
 	OLED_Init();
 	MyRTC_init();
 	Key_init();
 	NFC_USART_init();
-	Buzzer_init();
-	LED_init();
 	
 	while(1){
 		switch(status){
@@ -708,8 +514,8 @@ int main(void)
 			case WRITE_PAGE:
 				write_page();
 				break;
-			case DELETE_PAGE:
-				delete_page();
+			case GAME_PAGE:
+				game_page();
 				break;
 			default:
 				break;
