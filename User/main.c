@@ -382,11 +382,6 @@ void write_page_read_card(void){
 		OLED_Clear();
 		// GET UID
 		NFC_GET_UID();
-		// Tran_Hex2Str
-		char result_string[16];
-		Tran_Hex2Str(result_string, Card_UID, 6);
-		// record ID
-		strcpy(name_struct[name_array_len].card, result_string); 
 		
 		// record name
 		uint8_t exit_flag = 0;
@@ -429,6 +424,12 @@ void write_page_read_card(void){
 				
 				// finish
 				if(input_char == 'a' - 1){
+					// Tran_Hex2Str
+					char result_string[16];
+					Tran_Hex2Str(result_string, Card_UID, 6);
+					// record ID
+					strcpy(name_struct[name_array_len].card, result_string); 
+					
 					input_name_array[input_cursor - 1] = '\0';
 					strcpy(name_struct[name_array_len].name, input_name_array);
 					name_array_len += 1;
@@ -679,7 +680,6 @@ void Tran_Hex2Str(char* result_srting, uint8_t* Hex_array, uint16_t Len)
 }
 
 
-// add songer and LED program
 int main(void)
 {
 	Store_init();
