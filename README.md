@@ -15,6 +15,7 @@ STM32_PN532/
 ├── Start/                           # 启动文件、系统初始化代码 
 ├── System/                          # 系统使用模块 
 ├── User/                            # 用户应用层
+├── PCB/                             # 项目使用的 PCB （嘉立创 EDA）
 ├── Project.uvprojx                  # Keil µVision 工程文件 
 ├── Project.uvoptx                   # Keil 项目配置 
 ├── ProgramLogs.txt                  # 调试日志 

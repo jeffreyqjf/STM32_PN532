@@ -15,6 +15,7 @@ STM32_PN532/
 ├── Start/                           # Startup files and system initialization
 ├── System/                          # System-level modules
 ├── User/                            # User application layer
+├── PCB/                             # Project PCB (designed with JLC EDA)
 ├── Project.uvprojx                  # Keil µVision project file
 ├── Project.uvoptx                   # Keil project configuration
 ├── ProgramLogs.txt                  # Debug logs
