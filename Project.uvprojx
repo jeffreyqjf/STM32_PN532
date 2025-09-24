@@ -731,26 +731,6 @@
               <FilePath>.\Module\Timer.h</FilePath>
             </File>
             <File>
-              <FileName>PWM.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Module\PWM.c</FilePath>
-            </File>
-            <File>
-              <FileName>PWM.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Module\PWM.h</FilePath>
-            </File>
-            <File>
-              <FileName>AD.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Module\AD.c</FilePath>
-            </File>
-            <File>
-              <FileName>AD.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Module\AD.h</FilePath>
-            </File>
-            <File>
               <FileName>MyRTC.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Module\MyRTC.c</FilePath>
@@ -781,16 +761,6 @@
               <FilePath>.\Module\OLED_Data.h</FilePath>
             </File>
             <File>
-              <FileName>I2C.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Module\I2C.c</FilePath>
-            </File>
-            <File>
-              <FileName>I2C.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Module\I2C.h</FilePath>
-            </File>
-            <File>
               <FileName>Serial.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Module\Serial.c</FilePath>
@@ -801,19 +771,9 @@
               <FilePath>.\Module\Serial.h</FilePath>
             </File>
             <File>
-              <FileName>NFC_I2C.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Module\NFC_I2C.c</FilePath>
-            </File>
-            <File>
               <FileName>NFC_USART.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\Module\NFC_USART.c</FilePath>
-            </File>
-            <File>
-              <FileName>NFC_I2C.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Module\NFC_I2C.h</FilePath>
             </File>
             <File>
               <FileName>NFC_USART.h</FileName>
