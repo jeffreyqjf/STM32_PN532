@@ -55,5 +55,6 @@ Listings/
 *.VC.db
 *.VC.opendb
 Project.uvguix.*
+ProgramLogs.txt
 # OneDrive temporary files
 ~$*
