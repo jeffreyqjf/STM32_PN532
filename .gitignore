@@ -42,6 +42,7 @@ obj/
 Obj/
 Objects/
 DebugConfig/
+Listings/
 
 # Other
 *.swp
@@ -53,6 +54,7 @@ DebugConfig/
 *.opensdf
 *.VC.db
 *.VC.opendb
-
+Project.uvguix.*
+ProgramLogs.txt
 # OneDrive temporary files
 ~$*
